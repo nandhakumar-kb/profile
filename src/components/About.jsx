@@ -1,0 +1,68 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { styles } from "../styles";
+import SectionWrapper from "../hoc/SectionWrapper";
+
+const About = () => {
+    return (
+        <>
+            <motion.div>
+                <p className={styles.sectionSubText}>Introduction</p>
+                <h2 className={styles.sectionHeadText}>Overview.</h2>
+            </motion.div>
+
+            <div className="mt-10 flex justify-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 50, rotate: -2 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                    transition={{ duration: 0.8, type: "spring" }}
+                    className="relative bg-[#fdfbf7] p-8 md:p-12 rounded-sm shadow-2xl max-w-5xl w-full transform rotate-1"
+                    style={{
+                        backgroundImage: "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                    }}
+                >
+                    {/* Tape Effect */}
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-[#ffffff80] backdrop-blur-sm rotate-1 shadow-sm border border-white/20"></div>
+
+                    <div className="flex flex-col md:flex-row gap-10 items-center">
+                        {/* Polaroid Image */}
+                        <div className="flex-shrink-0 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                            <div className="bg-white p-4 pb-16 shadow-lg rounded-sm border border-gray-200">
+                                <img
+                                    src="/src/assets/profile.png"
+                                    alt="profile"
+                                    className="w-[250px] h-[250px] object-cover filter sepia-[0.2]"
+                                />
+                                <p className="text-center mt-4 font-['Dancing_Script'] text-2xl text-gray-600">Me, 2025</p>
+                            </div>
+                        </div>
+
+                        {/* Letter Content */}
+                        <div className="flex-1 font-['Dancing_Script'] text-gray-800">
+                            <h3 className="text-4xl font-bold mb-6 text-[#915eff]">Dear Visitor,</h3>
+                            
+                            <p className="text-2xl leading-relaxed mb-6">
+                                Welcome to my digital space! As an <span className="font-bold text-[#915eff]">Electrical and Electronics Engineering</span> student, 
+                                I've always been captivated by the magic of <span className="font-bold text-[#915eff]">technology</span> and <span className="font-bold text-[#915eff]">innovation</span>.
+                            </p>
+                            
+                            <p className="text-2xl leading-relaxed mb-8">
+                                I strive to apply my technical skills in real-world environments and contribute to meaningful projects. 
+                                With a motivated and adaptable approach, I am eager to learn, grow, and take on new challenges that drive impactful results.
+                            </p>
+
+                            <div className="flex justify-end mt-8">
+                                <div className="text-right">
+                                    <p className="text-2xl mb-2">Sincerely,</p>
+                                    <p className="text-4xl font-bold text-[#915eff] transform -rotate-2">Sri</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+        </>
+    );
+};
+
+export default SectionWrapper(About, "about");
