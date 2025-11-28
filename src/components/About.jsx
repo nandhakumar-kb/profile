@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import SectionWrapper from "../hoc/SectionWrapper";
+import profileImg from "../assets/profile.png";
 
 const About = () => {
     return (
@@ -28,11 +29,11 @@ const About = () => {
                         {/* Polaroid Image */}
                         <div className="flex-shrink-0 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
                             <div className="bg-white p-4 pb-16 shadow-lg rounded-sm border border-gray-200">
-                                <img
-                                    src="/src/assets/profile.png"
-                                    alt="profile"
-                                    className="w-[250px] h-[250px] object-cover filter sepia-[0.2]"
-                                />
+                                        <img
+                                            src={profileImg}
+                                            alt="profile"
+                                            className="w-[250px] h-[250px] object-cover filter sepia-[0.2]"
+                                        />
                                 <p className="text-center mt-4 font-['Dancing_Script'] text-2xl text-gray-600">Me, 2025</p>
                             </div>
                         </div>

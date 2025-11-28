@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
+import avatar from "../assets/avatar.png";
 
 const Hero = () => {
     return (
@@ -24,7 +25,7 @@ const Hero = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         whileHover={{ scale: 1.5, rotate: 5, filter: "brightness(1.2)" }}
                         transition={{ duration: 0.5 }}
-                        src="/src/assets/avatar.png"
+                        src={avatar}
                         alt="Srikanteshwaran"
                         className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] object-contain drop-shadow-2xl z-10"
                     />
