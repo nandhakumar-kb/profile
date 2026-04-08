@@ -51,14 +51,18 @@ const SkillCard = ({ title, skills, index }) => (
                 {title}
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-6">
+            <p className="text-slate-300 text-[12px] font-medium mb-6 text-center">
+                {skills.length} skills
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
                 {skills.map((skill) => (
                     <div
                         key={skill.name}
-                        className="flex flex-col items-center gap-2 group relative"
+                        className="flex flex-col items-center gap-3 group relative w-[120px]"
                     >
                         <SkillIcon icon={skill.icon} name={skill.name} />
-                        <p className="text-slate-300 text-[10px] font-bold uppercase tracking-wider text-center max-w-[80px] leading-tight">
+                        <p className="text-slate-200 text-[12px] font-semibold tracking-wide text-center leading-tight">
                             {skill.name}
                         </p>
                     </div>

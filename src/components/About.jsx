@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import SectionWrapper from "../hoc/SectionWrapper";
-import profileImg from "../assets/profile.png";
+import profileImg from "../assets/profile.jpeg";
+import { profileData } from "../constants";
 
 const About = () => {
     return (
@@ -32,9 +33,9 @@ const About = () => {
                                         <img
                                             src={profileImg}
                                             alt="profile"
-                                            className="w-[250px] h-[250px] object-cover filter sepia-[0.2]"
+                                            className="w-[260px] h-[360px] object-cover filter sepia-[0.2]"
                                         />
-                                <p className="text-center mt-4 font-['Dancing_Script'] text-2xl text-gray-600">Me, 2025</p>
+                                <p className="text-center mt-4 font-['Dancing_Script'] text-2xl text-gray-600">Me, 2026</p>
                             </div>
                         </div>
 
@@ -43,19 +44,31 @@ const About = () => {
                             <h3 className="text-4xl font-bold mb-6 text-[#915eff]">Dear Visitor,</h3>
                             
                             <p className="text-2xl leading-relaxed mb-6">
-                                Welcome to my digital space! As an <span className="font-bold text-[#915eff]">Electrical and Electronics Engineering</span> student, 
-                                I've always been captivated by the magic of <span className="font-bold text-[#915eff]">technology</span> and <span className="font-bold text-[#915eff]">innovation</span>.
+                                I am a detail-oriented <span className="font-bold text-[#915eff]">Computer Science Engineering student (2027 Batch)</span> specializing in the intersection of
+                                complex system architecture and intuitive UI/UX.
                             </p>
                             
                             <p className="text-2xl leading-relaxed mb-8">
-                                I strive to apply my technical skills in real-world environments and contribute to meaningful projects. 
-                                With a motivated and adaptable approach, I am eager to learn, grow, and take on new challenges that drive impactful results.
+                                I work deeply with <span className="font-bold text-[#915eff]">Figma and React.js</span>, building pixel-perfect digital products with a strong focus on clarity,
+                                motion, and usability. I am passionate about AI-Native design, where machine learning and modular logic support better decisions and cognitive hospitality.
+                            </p>
+
+                            <p className="text-xl leading-relaxed mb-4 font-semibold text-[#915eff]">
+                                {profileData.headline}
+                            </p>
+
+                            <p className="text-lg leading-relaxed mb-2 text-gray-700">
+                                {profileData.location} | {profileData.phone}
+                            </p>
+
+                            <p className="text-lg leading-relaxed text-gray-700">
+                                {profileData.email}
                             </p>
 
                             <div className="flex justify-end mt-8">
                                 <div className="text-right">
                                     <p className="text-2xl mb-2">Sincerely,</p>
-                                    <p className="text-4xl font-bold text-[#915eff] transform -rotate-2">Sri</p>
+                                    <p className="text-4xl font-bold text-[#915eff] transform -rotate-2">Nandha Kumar</p>
                                 </div>
                             </div>
                         </div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "../styles";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { Mail, Linkedin, Github } from "lucide-react";
+import { profileData } from "../constants";
 
 const Contact = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -38,10 +39,10 @@ const Contact = () => {
                                 <div className="absolute bottom-4 left-4 w-32 h-32 bg-yellow-600/20 rounded-full blur-xl" />
 
                                 <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 via-green-500 to-blue-500 bg-clip-text text-transparent animate-gradient-x drop-shadow-sm text-center">
-                                    Srikanteshwaran
+                                    {profileData.fullName.toUpperCase()}
                                 </h1>
                                 <p className="text-black/80 text-xl font-medium tracking-wider uppercase mb-8 text-center">
-                                    EEE Student & Innovator
+                                    {profileData.headline}
                                 </p>
                                 <p className="text-black/60 text-sm font-semibold animate-bounce mt-4">
                                     Touch to Connect
@@ -51,7 +52,7 @@ const Contact = () => {
                             <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row gap-6 justify-center items-center z-10">
                                 {/* LinkedIn - Neon Blue Glossy */}
                                 <motion.a
-                                    href="https://www.linkedin.com/in/srikanteshwaran-s"
+                                    href={profileData.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     initial={{ x: -50, opacity: 0 }}
@@ -72,7 +73,7 @@ const Contact = () => {
 
                                 {/* Mail - Neon Green Glossy */}
                                 <motion.a
-                                    href="mailto:srikantesh843@gmail.com"
+                                    href={`mailto:${profileData.email}`}
                                     initial={{ y: 50, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     exit={{ y: 50, opacity: 0 }}
@@ -86,12 +87,12 @@ const Contact = () => {
                                         <Mail size={48} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-white drop-shadow-md z-10">Email</h3>
-                                    <p className="text-lime-100 text-sm font-medium z-10">Send me a message</p>
+                                    <p className="text-lime-100 text-sm font-medium z-10">{profileData.email}</p>
                                 </motion.a>
 
                                 {/* GitHub - Neon Purple Glossy */}
                                 <motion.a
-                                    href="https://github.com/"
+                                    href={profileData.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     initial={{ x: 50, opacity: 0 }}
@@ -113,6 +114,7 @@ const Contact = () => {
                         )}
                     </AnimatePresence>
                 </div>
+                <p className="text-secondary text-center text-[15px] mt-2">{profileData.location} | {profileData.phone}</p>
             </motion.div>
         </div>
     );

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Home, User, Briefcase, FileText, Code, Mail, Download } from "lucide-react";
+import { Home, User, FileText, Code, Mail, Download } from "lucide-react";
+import { profileData } from "../constants";
 
 const Navbar = () => {
     const [active, setActive] = useState("");
@@ -16,7 +17,7 @@ const Navbar = () => {
                 setScrolled(false);
             }
 
-            const sections = ["about", "work", "education", "skills", "projects", "contact"];
+            const sections = ["about", "education", "skills", "projects", "contact"];
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
@@ -35,7 +36,6 @@ const Navbar = () => {
 
     const navLinks = [
         { id: "about", title: "About", icon: User, color: "text-blue-500", bg: "bg-blue-500" },
-        { id: "work", title: "Experience", icon: Briefcase, color: "text-purple-500", bg: "bg-purple-500" },
         { id: "education", title: "Education", icon: FileText, color: "text-green-500", bg: "bg-green-500" },
         { id: "skills", title: "Skills", icon: Code, color: "text-yellow-500", bg: "bg-yellow-500" },
         { id: "projects", title: "Projects", icon: Code, color: "text-pink-500", bg: "bg-pink-500" },
@@ -104,8 +104,8 @@ const Navbar = () => {
                     {/* Resume Button */}
                     <li className="relative ml-4">
                         <a
-                            href="/SRIKANTESHWARAN(RESUME).pdf"
-                            download="Srikanteshwaran_Resume.pdf"
+                            href={profileData.resumeFile}
+                            download={profileData.resumeDownloadName}
                             className="relative flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/30 group"
                         >
                             <motion.div
