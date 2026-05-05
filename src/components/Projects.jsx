@@ -51,7 +51,7 @@ const Projects = () => {
         <>
             <motion.div>
                 <p className={`${styles.sectionSubText} `}>UI/UX and Product Builds</p>
-                <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+                <h2 className={`${styles.sectionHeadText} text-accent-projects`}>Projects.</h2>
             </motion.div>
 
             <div className='w-full flex'>

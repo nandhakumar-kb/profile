@@ -16,6 +16,13 @@ body {
   color: #fff;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 .hash-span {

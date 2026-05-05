@@ -4,12 +4,12 @@ const styles = {
     padding: "sm:px-16 px-6 sm:py-16 py-10",
 
     heroHeadText:
-        "font-stylish italic font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
+        "font-stylish font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
     heroSubText:
         "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
 
     sectionHeadText:
-        "font-stylish italic font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-violet-500 bg-clip-text text-transparent",
+        "font-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
     sectionSubText:
         "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
 };

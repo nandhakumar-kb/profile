@@ -59,7 +59,7 @@ const Certifications = () => {
             <div className={`${styles.padding} bg-tertiary rounded-2xl min-h-[260px] sm:min-h-[300px]`}>
                 <motion.div variants={textVariant()}>
                     <p className={styles.sectionSubText}>My Credentials</p>
-                    <h2 className={styles.sectionHeadText}>Certifications.</h2>
+                    <h2 className={`${styles.sectionHeadText} text-accent-about`}>Certifications.</h2>
                 </motion.div>
             </div>
             <div className={`${styles.paddingX} -mt-12 sm:-mt-20 pb-10 sm:pb-14 flex flex-wrap gap-5 sm:gap-7 justify-center`}>

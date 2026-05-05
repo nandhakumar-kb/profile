@@ -78,7 +78,7 @@ const Education = () => {
                 <p className={`${styles.sectionSubText} text-center`}>
                     My Academic Journey
                 </p>
-                <h2 className={`${styles.sectionHeadText} text-center`}>
+                <h2 className={`${styles.sectionHeadText} text-center text-accent-education`}>
                     Education.
                 </h2>
             </motion.div>

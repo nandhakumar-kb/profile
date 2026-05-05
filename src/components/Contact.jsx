@@ -28,7 +28,7 @@ const Contact = () => {
                 className="w-full max-w-5xl"
             >
                 <p className={`${styles.sectionSubText} text-center`}>Get in touch</p>
-                <h3 className={`${styles.sectionHeadText} text-center mb-8 sm:mb-10`}>Contact.</h3>
+                <h3 className={`${styles.sectionHeadText} text-center mb-8 sm:mb-10 text-accent-contact`}>Contact.</h3>
 
                 <div
                     className="w-full min-h-[350px] sm:h-[400px] flex justify-center items-center relative px-4 sm:px-0"
@@ -59,8 +59,8 @@ const Contact = () => {
                                 </p>
                             </motion.div>
                         ) : (
-                            <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row gap-3 sm:gap-6 justify-center items-center z-10 px-4 sm:px-0">
-                                {/* LinkedIn - Neon Blue Glossy */}
+                            <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row gap-2 sm:gap-4 md:gap-6 justify-center items-stretch md:items-center z-10 px-2 sm:px-4 overflow-y-auto md:overflow-visible py-2 md:py-0">
+                                {/* LinkedIn - Refined Blue */}
                                 <motion.a
                                     href={profileData.linkedin}
                                     target="_blank"
@@ -69,38 +69,38 @@ const Contact = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: -50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.1 }}
-                                    className="w-full md:w-1/3 h-[220px] sm:h-[300px] bg-gradient-to-br from-cyan-400 via-blue-600 to-blue-900 rounded-2xl shadow-[0_0_30px_rgba(59,130,246,0.6)] border-2 border-cyan-300 flex flex-col justify-center items-center gap-3 sm:gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-blue-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group"
                                 >
-                                    {/* Gloss Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-                                    <div className="p-3 sm:p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
-                                        <Linkedin size={32} className="sm:w-12 sm:h-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                    <div className="p-2 sm:p-3 md:p-4 bg-blue-500/20 rounded-full backdrop-blur-md border border-blue-400/50 shadow-inner z-10 flex items-center justify-center min-h-[48px] min-w-[48px]">
+                                        <Linkedin size={24} className="sm:w-8 sm:h-8 md:w-12 md:h-12 text-blue-300" />
                                     </div>
-                                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md z-10">LinkedIn</h3>
-                                    <p className="text-cyan-100 text-xs sm:text-sm font-medium z-10">Connect professionally</p>
+                                    <h3 className="text-base sm:text-lg md:text-2xl font-bold text-blue-100 z-10">LinkedIn</h3>
+                                    <p className="text-blue-200 text-xs sm:text-xs md:text-sm font-medium z-10">Connect</p>
                                 </motion.a>
 
-                                {/* Mail - Neon Green Glossy */}
+                                {/* Mail - Refined Emerald */}
                                 <motion.a
                                     href={`mailto:${profileData.email}`}
                                     initial={{ y: 50, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     exit={{ y: 50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.2 }}
-                                    className="w-full md:w-1/3 h-[220px] sm:h-[300px] bg-gradient-to-br from-lime-400 via-green-600 to-green-900 rounded-2xl shadow-[0_0_30px_rgba(34,197,94,0.6)] border-2 border-lime-300 flex flex-col justify-center items-center gap-3 sm:gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-emerald-900 via-teal-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-emerald-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group"
                                 >
-                                    {/* Gloss Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-                                    <div className="p-3 sm:p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
-                                        <Mail size={32} className="sm:w-12 sm:h-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                    <div className="p-2 sm:p-3 md:p-4 bg-emerald-500/20 rounded-full backdrop-blur-md border border-emerald-400/50 shadow-inner z-10 flex items-center justify-center min-h-[48px] min-w-[48px]">
+                                        <Mail size={24} className="sm:w-8 sm:h-8 md:w-12 md:h-12 text-emerald-300" />
                                     </div>
-                                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md z-10">Email</h3>
-                                    <p className="text-lime-100 text-xs sm:text-sm font-medium z-10 break-all">{profileData.email}</p>
+                                    <h3 className="text-base sm:text-lg md:text-2xl font-bold text-emerald-100 z-10">Email</h3>
+                                    <p className="text-emerald-200 text-xs sm:text-xs md:text-sm font-medium z-10 line-clamp-1">Message me</p>
                                 </motion.a>
 
-                                {/* GitHub - Neon Purple Glossy */}
+                                {/* GitHub - Refined Purple */}
                                 <motion.a
                                     href={profileData.github}
                                     target="_blank"
@@ -109,16 +109,16 @@ const Contact = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: 50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.3 }}
-                                    className="w-full md:w-1/3 h-[220px] sm:h-[300px] bg-gradient-to-br from-fuchsia-400 via-purple-600 to-purple-900 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.6)] border-2 border-fuchsia-300 flex flex-col justify-center items-center gap-3 sm:gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-purple-900 via-violet-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-purple-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group"
                                 >
-                                    {/* Gloss Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-                                    <div className="p-3 sm:p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
-                                        <Github size={32} className="sm:w-12 sm:h-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                    <div className="p-2 sm:p-3 md:p-4 bg-purple-500/20 rounded-full backdrop-blur-md border border-purple-400/50 shadow-inner z-10 flex items-center justify-center min-h-[48px] min-w-[48px]">
+                                        <Github size={24} className="sm:w-8 sm:h-8 md:w-12 md:h-12 text-purple-300" />
                                     </div>
-                                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md z-10">GitHub</h3>
-                                    <p className="text-fuchsia-100 text-xs sm:text-sm font-medium z-10">Check my code</p>
+                                    <h3 className="text-base sm:text-lg md:text-2xl font-bold text-purple-100 z-10">GitHub</h3>
+                                    <p className="text-purple-200 text-xs sm:text-xs md:text-sm font-medium z-10">View code</p>
                                 </motion.a>
                             </div>
                         )}

@@ -10,7 +10,7 @@ const About = () => {
         <>
             <motion.div>
                 <p className={styles.sectionSubText}>Introduction</p>
-                <h2 className={styles.sectionHeadText}>Overview.</h2>
+                <h2 className={`${styles.sectionHeadText} text-accent-about`}>Overview.</h2>
             </motion.div>
 
             <div className="mt-10 flex justify-center">

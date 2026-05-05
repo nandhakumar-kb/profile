@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, User, FileText, Code, Mail, Download, Menu, X } from "lucide-react";
+import { Home, User, FileText, Code, Mail, Download } from "lucide-react";
 import { profileData } from "../constants";
 
 const Navbar = () => {
     const [active, setActive] = useState("");
     const [scrolled, setScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -45,7 +44,6 @@ const Navbar = () => {
 
     const handleNavClick = (navId) => {
         setActive(navId);
-        setIsMobileMenuOpen(false);
     };
 
     return (
@@ -128,82 +126,69 @@ const Navbar = () => {
                 </ul>
             </motion.nav>
 
-            {/* Mobile Navbar */}
+            {/* Mobile Bottom Navigation */}
             <motion.nav
-                initial={{ y: -100, opacity: 0 }}
+                initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-                className={`pointer-events-auto md:hidden flex items-center justify-between w-full max-w-md px-6 py-4 rounded-full bg-black/30 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20`}
+                className={`pointer-events-auto md:hidden fixed bottom-6 left-4 right-4 flex items-center justify-between w-auto max-w-sm px-4 py-3 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20 mx-auto inset-x-0`}
             >
                 <Link
                     to="/"
-                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                    className="p-2 rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
                     onClick={() => {
                         setActive("");
                         window.scrollTo(0, 0);
                     }}
+                    title="Home"
                 >
-                    <Home size={24} className="text-white" />
+                    <Home size={22} className="text-white" />
                 </Link>
 
-                <button
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                >
-                    {isMobileMenuOpen ? (
-                        <X size={24} className="text-white" />
-                    ) : (
-                        <Menu size={24} className="text-white" />
-                    )}
-                </button>
-            </motion.nav>
+                <div className="w-[1px] h-8 bg-white/10 mx-1" />
 
-            {/* Mobile Menu Dropdown */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3 }}
-                        className="md:hidden absolute top-20 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg shadow-black/20 overflow-hidden"
-                    >
-                        <ul className="flex flex-col p-4 gap-2">
-                            {navLinks.map((nav) => {
-                                const Icon = nav.icon;
-                                const isActive = active === nav.id;
+                <ul className="flex items-center gap-1 flex-1 justify-center overflow-x-auto">
+                    {navLinks.map((nav) => {
+                        const Icon = nav.icon;
+                        const isActive = active === nav.id;
 
-                                return (
-                                    <li key={nav.id}>
-                                        <a
-                                            href={`#${nav.id}`}
-                                            onClick={() => handleNavClick(nav.id)}
-                                            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
-                                                isActive
-                                                    ? "bg-white/10 text-white"
-                                                    : "text-secondary hover:bg-white/5 hover:text-white"
-                                            }`}
-                                        >
-                                            <Icon size={20} />
-                                            <span className="font-medium">{nav.title}</span>
-                                        </a>
-                                    </li>
-                                );
-                            })}
-                            <li className="border-t border-white/10 pt-2 mt-2">
+                        return (
+                            <li key={nav.id} className="flex-shrink-0">
                                 <a
-                                    href={profileData.resumeFile}
-                                    download={profileData.resumeDownloadName}
-                                    className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all"
+                                    href={`#${nav.id}`}
+                                    onClick={() => handleNavClick(nav.id)}
+                                    className={`relative flex items-center justify-center p-2 rounded-lg transition-all duration-300 group`}
+                                    title={nav.title}
                                 >
-                                    <Download size={20} />
-                                    <span>Resume</span>
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="mobile-active-pill"
+                                            className={`absolute inset-0 rounded-lg opacity-20 ${nav.bg}`}
+                                            transition={{ type: "spring", duration: 0.6 }}
+                                        />
+                                    )}
+
+                                    <Icon
+                                        size={20}
+                                        className={`${isActive ? nav.color : "text-secondary group-hover:text-white"} transition-colors relative z-10`}
+                                    />
                                 </a>
                             </li>
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                        );
+                    })}
+                </ul>
+
+                <div className="w-[1px] h-8 bg-white/10 mx-1" />
+
+                <a
+                    href={profileData.resumeFile}
+                    download={profileData.resumeDownloadName}
+                    className="p-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all flex-shrink-0 flex items-center justify-center min-h-[36px] min-w-[36px]"
+                    title="Download Resume"
+                >
+                    <Download size={18} className="text-white" />
+                </a>
+            </motion.nav>
         </div>
     );
 };

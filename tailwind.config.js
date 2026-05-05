@@ -12,9 +12,14 @@ export default {
         tertiary: "#151030",
         "black-100": "#100d25",
         "black-200": "#090325",
-        "black-100": "#100d25",
-        "black-200": "#090325",
         "white-100": "#f3f3f3",
+        accent: {
+          about: "#a78bfa",
+          education: "#34d399",
+          skills: "#22d3ee",
+          projects: "#f472b6",
+          contact: "#fbbf24",
+        },
       },
       fontFamily: {
         primary: ["Poppins", "sans-serif"],

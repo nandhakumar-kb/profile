@@ -28,7 +28,7 @@ const Hero = () => {
                         transition={{ duration: 0.5 }}
                         src={avatar}
                         alt={profileData.fullName}
-                        className="relative w-[200px] h-[200px] xs:w-[250px] xs:h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px] object-contain drop-shadow-2xl z-10"
+                        className="relative w-[280px] h-[280px] xs:w-[320px] xs:h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[580px] lg:h-[580px] object-contain drop-shadow-2xl z-10"
                     />
                 </div>
             </div>
