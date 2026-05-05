@@ -12,20 +12,20 @@ const Book3D = ({ edu, index }) => {
     const goldText = "text-transparent bg-clip-text bg-gradient-to-b from-[#ffd700] via-[#fbf5b7] to-[#aa771c] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]";
 
     return (
-        <div className="group relative w-[300px] h-[400px] perspective-1000 mx-auto cursor-pointer">
+        <div className="group relative w-[250px] sm:w-[280px] md:w-[300px] h-[350px] sm:h-[380px] md:h-[400px] perspective-1000 mx-auto cursor-pointer">
             <div className="relative w-full h-full duration-500 transform-style-3d group-hover:rotate-y-[-20deg] transition-transform">
                 {/* Front Cover */}
-                <div className={`absolute inset-0 ${bookColor} rounded-r-lg shadow-2xl p-6 flex flex-col items-center justify-between border-l-4 border-l-[#00000030] z-20`}>
+                <div className={`absolute inset-0 ${bookColor} rounded-r-lg shadow-2xl p-4 sm:p-6 flex flex-col items-center justify-between border-l-4 border-l-[#00000030] z-20`}>
                     {/* Decorative Border */}
                     <div className="absolute inset-4 border-2 border-[#ffd700] opacity-50 rounded-sm pointer-events-none"></div>
                     <div className="absolute inset-5 border border-[#ffd700] opacity-30 rounded-sm pointer-events-none"></div>
 
                     {/* Top Detail */}
-                    <div className="text-center mt-8">
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#ffd700]/30">
-                            <img src={edu.icon} alt={edu.school_name} className="w-10 h-10 object-contain" />
+                    <div className="text-center mt-4 sm:mt-8">
+                        <div className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 sm:mb-4 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#ffd700]/30">
+                            <img src={edu.icon} alt={edu.school_name} className="w-8 sm:w-10 h-8 sm:h-10 object-contain" />
                         </div>
-                        <h3 className={`${goldText} font-serif text-2xl font-bold tracking-wider uppercase text-center leading-tight`}>
+                        <h3 className={`${goldText} font-serif text-lg sm:text-2xl font-bold tracking-wider uppercase text-center leading-tight`}>
                             {edu.title.split(" ")[0]}
                         </h3>
                         <p className="text-[#ffd700] text-xs tracking-[0.2em] uppercase mt-1 opacity-80">Certificate of Completion</p>
@@ -33,15 +33,15 @@ const Book3D = ({ edu, index }) => {
 
                     {/* Middle Detail */}
                     <div className="text-center">
-                        <h4 className="text-white/90 font-serif text-lg italic px-4">
+                        <h4 className="text-white/90 font-serif text-sm sm:text-lg italic px-4">
                             {edu.school_name}
                         </h4>
                     </div>
 
                     {/* Bottom Detail */}
-                    <div className="text-center mb-8 w-full">
+                    <div className="text-center mb-4 sm:mb-8 w-full">
                         <div className="h-[1px] w-1/2 bg-[#ffd700] mx-auto mb-3 opacity-50"></div>
-                        <p className="text-[#ffd700] font-mono text-sm">{edu.date}</p>
+                        <p className="text-[#ffd700] font-mono text-xs sm:text-sm">{edu.date}</p>
                         <div className="mt-2 bg-[#00000040] py-1 px-3 rounded-full inline-block">
                             <p className="text-white text-xs font-bold tracking-wide">
                                 {edu.points[0]}
@@ -83,7 +83,7 @@ const Education = () => {
                 </h2>
             </motion.div>
 
-            <div className='mt-20 flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 flex-wrap'>
+            <div className='mt-12 sm:mt-20 flex flex-col md:flex-row justify-center items-center gap-8 sm:gap-16 md:gap-24 flex-wrap'>
                 {education.map((edu, index) => (
                     <motion.div
                         key={index}

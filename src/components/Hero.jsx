@@ -6,9 +6,9 @@ import { profileData } from "../constants";
 
 const Hero = () => {
     return (
-        <section className={`relative w-full h-screen mx-auto flex items-center`}>
+        <section className={`relative w-full min-h-screen mx-auto flex items-center pt-20 sm:pt-0`}>
             <div
-                className={`max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-10 w-full`}
+                className={`max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-6 sm:gap-10 w-full`}
             >
                 <div className="flex-1">
                     <h1 className={`${styles.heroHeadText} text-white`}>
@@ -24,11 +24,11 @@ const Hero = () => {
                     <motion.img
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        whileHover={{ scale: 1.5, rotate: 5, filter: "brightness(1.2)" }}
+                        whileHover={{ scale: 1.05, rotate: 2, filter: "brightness(1.1)" }}
                         transition={{ duration: 0.5 }}
                         src={avatar}
                         alt={profileData.fullName}
-                        className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] object-contain drop-shadow-2xl z-10"
+                        className="relative w-[200px] h-[200px] xs:w-[250px] xs:h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px] object-contain drop-shadow-2xl z-10"
                     />
                 </div>
             </div>

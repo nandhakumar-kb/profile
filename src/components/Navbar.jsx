@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Home, User, FileText, Code, Mail, Download } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Home, User, FileText, Code, Mail, Download, Menu, X } from "lucide-react";
 import { profileData } from "../constants";
 
 const Navbar = () => {
     const [active, setActive] = useState("");
     const [scrolled, setScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,13 +43,19 @@ const Navbar = () => {
         { id: "contact", title: "Contact", icon: Mail, color: "text-red-500", bg: "bg-red-500" },
     ];
 
+    const handleNavClick = (navId) => {
+        setActive(navId);
+        setIsMobileMenuOpen(false);
+    };
+
     return (
-        <div className="fixed top-5 left-0 right-0 z-50 flex justify-center items-center pointer-events-none">
+        <div className="fixed top-5 left-0 right-0 z-50 flex justify-center items-center pointer-events-none px-4 sm:px-0">
+            {/* Desktop Navbar */}
             <motion.nav
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-                className={`pointer-events-auto flex items-center gap-4 px-6 py-4 rounded-full bg-black/30 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20`}
+                className={`pointer-events-auto hidden md:flex items-center gap-4 px-6 py-4 rounded-full bg-black/30 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20`}
             >
                 <Link
                     to="/"
@@ -72,7 +79,7 @@ const Navbar = () => {
                             <li key={nav.id} className="relative">
                                 <a
                                     href={`#${nav.id}`}
-                                    onClick={() => setActive(nav.id)}
+                                    onClick={() => handleNavClick(nav.id)}
                                     className={`relative flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 group ${isActive ? "bg-white/10" : "hover:bg-white/5"}`}
                                 >
                                     {isActive && (
@@ -120,6 +127,83 @@ const Navbar = () => {
                     </li>
                 </ul>
             </motion.nav>
+
+            {/* Mobile Navbar */}
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+                className={`pointer-events-auto md:hidden flex items-center justify-between w-full max-w-md px-6 py-4 rounded-full bg-black/30 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20`}
+            >
+                <Link
+                    to="/"
+                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                    onClick={() => {
+                        setActive("");
+                        window.scrollTo(0, 0);
+                    }}
+                >
+                    <Home size={24} className="text-white" />
+                </Link>
+
+                <button
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                >
+                    {isMobileMenuOpen ? (
+                        <X size={24} className="text-white" />
+                    ) : (
+                        <Menu size={24} className="text-white" />
+                    )}
+                </button>
+            </motion.nav>
+
+            {/* Mobile Menu Dropdown */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden absolute top-20 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg shadow-black/20 overflow-hidden"
+                    >
+                        <ul className="flex flex-col p-4 gap-2">
+                            {navLinks.map((nav) => {
+                                const Icon = nav.icon;
+                                const isActive = active === nav.id;
+
+                                return (
+                                    <li key={nav.id}>
+                                        <a
+                                            href={`#${nav.id}`}
+                                            onClick={() => handleNavClick(nav.id)}
+                                            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                                                isActive
+                                                    ? "bg-white/10 text-white"
+                                                    : "text-secondary hover:bg-white/5 hover:text-white"
+                                            }`}
+                                        >
+                                            <Icon size={20} />
+                                            <span className="font-medium">{nav.title}</span>
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                            <li className="border-t border-white/10 pt-2 mt-2">
+                                <a
+                                    href={profileData.resumeFile}
+                                    download={profileData.resumeDownloadName}
+                                    className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all"
+                                >
+                                    <Download size={20} />
+                                    <span>Resume</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

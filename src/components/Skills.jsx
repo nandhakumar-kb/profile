@@ -45,24 +45,24 @@ const SkillCard = ({ title, skills, index }) => (
                 scale: 1,
                 speed: 450,
             }}
-            className={`bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-[20px] py-5 px-6 min-h-[280px] flex flex-col items-center justify-start border backdrop-blur-sm hover:border-white/40 transition-all duration-300 group/card`}
+            className={`bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-[20px] py-4 sm:py-5 px-4 sm:px-6 min-h-[280px] flex flex-col items-center justify-start border backdrop-blur-sm hover:border-white/40 transition-all duration-300 group/card`}
         >
-            <h3 className="text-white text-[20px] font-bold text-center mb-8 border-b border-white/10 pb-2 w-full tracking-wider">
+            <h3 className="text-white text-base sm:text-[20px] font-bold text-center mb-6 sm:mb-8 border-b border-white/10 pb-2 w-full tracking-wider">
                 {title}
             </h3>
 
-            <p className="text-slate-300 text-[12px] font-medium mb-6 text-center">
+            <p className="text-slate-300 text-xs sm:text-[12px] font-medium mb-6 text-center">
                 {skills.length} skills
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 {skills.map((skill) => (
                     <div
                         key={skill.name}
-                        className="flex flex-col items-center gap-3 group relative w-[120px]"
+                        className="flex flex-col items-center gap-2 sm:gap-3 group relative w-[100px] sm:w-[120px]"
                     >
                         <SkillIcon icon={skill.icon} name={skill.name} />
-                        <p className="text-slate-200 text-[12px] font-semibold tracking-wide text-center leading-tight">
+                        <p className="text-slate-200 text-[11px] sm:text-[12px] font-semibold tracking-wide text-center leading-tight">
                             {skill.name}
                         </p>
                     </div>
@@ -75,12 +75,12 @@ const SkillCard = ({ title, skills, index }) => (
 const Skills = () => {
     return (
         <div className="flex flex-col w-full">
-            <motion.div variants={textVariant()} className="mb-14 text-center">
+            <motion.div variants={textVariant()} className="mb-8 sm:mb-14 text-center">
                 <p className={styles.sectionSubText}>My Technical Proficiency</p>
                 <h2 className={styles.sectionHeadText}>Skills.</h2>
             </motion.div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
                 {skills.map((category, index) => (
                     <SkillCard
                         key={category.title}

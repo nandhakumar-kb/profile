@@ -7,6 +7,16 @@ import { profileData } from "../constants";
 
 const Contact = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    React.useEffect(() => {
+        setIsTouchDevice(() => (
+            (typeof window !== "undefined") &&
+            (("ontouchstart" in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0))
+        ));
+    }, []);
 
     return (
         <div className={`xl:mt-12 flex flex-col items-center justify-center gap-10 overflow-hidden`}>
@@ -18,38 +28,38 @@ const Contact = () => {
                 className="w-full max-w-5xl"
             >
                 <p className={`${styles.sectionSubText} text-center`}>Get in touch</p>
-                <h3 className={`${styles.sectionHeadText} text-center mb-10`}>Contact.</h3>
+                <h3 className={`${styles.sectionHeadText} text-center mb-8 sm:mb-10`}>Contact.</h3>
 
                 <div
-                    className="w-full h-[400px] flex justify-center items-center relative"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    className="w-full min-h-[350px] sm:h-[400px] flex justify-center items-center relative px-4 sm:px-0"
+                    onMouseEnter={() => !isTouchDevice && setIsHovered(true)}
+                    onMouseLeave={() => !isTouchDevice && setIsHovered(false)}
                 >
                     <AnimatePresence mode="wait">
-                        {!isHovered ? (
+                        {!isHovered && !isTouchDevice ? (
                             <motion.div
                                 key="gold-card"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3 } }}
                                 transition={{ duration: 0.5 }}
-                                className="absolute inset-0 w-full max-w-[600px] h-[350px] mx-auto bg-gradient-to-br from-yellow-400 via-yellow-200 to-yellow-500 rounded-2xl shadow-2xl flex flex-col justify-center items-center p-10 border-4 border-yellow-600 cursor-pointer z-20"
+                                className="absolute inset-0 w-full max-w-[400px] sm:max-w-[600px] h-[280px] sm:h-[350px] mx-auto bg-gradient-to-br from-yellow-400 via-yellow-200 to-yellow-500 rounded-2xl shadow-2xl flex flex-col justify-center items-center p-6 sm:p-10 border-4 border-yellow-600 cursor-pointer z-20"
                             >
-                                <div className="absolute top-4 right-4 w-20 h-20 bg-white/20 rounded-full blur-xl" />
-                                <div className="absolute bottom-4 left-4 w-32 h-32 bg-yellow-600/20 rounded-full blur-xl" />
+                                <div className="absolute top-4 right-4 w-16 sm:w-20 h-16 sm:h-20 bg-white/20 rounded-full blur-xl" />
+                                <div className="absolute bottom-4 left-4 w-24 sm:w-32 h-24 sm:h-32 bg-yellow-600/20 rounded-full blur-xl" />
 
-                                <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 via-green-500 to-blue-500 bg-clip-text text-transparent animate-gradient-x drop-shadow-sm text-center">
+                                <h1 className="text-2xl sm:text-5xl font-bold mb-2 sm:mb-4 bg-gradient-to-r from-red-500 via-green-500 to-blue-500 bg-clip-text text-transparent animate-gradient-x drop-shadow-sm text-center">
                                     {profileData.fullName.toUpperCase()}
                                 </h1>
-                                <p className="text-black/80 text-xl font-medium tracking-wider uppercase mb-8 text-center">
+                                <p className="text-black/80 text-sm sm:text-xl font-medium tracking-wider uppercase mb-4 sm:mb-8 text-center">
                                     {profileData.headline}
                                 </p>
-                                <p className="text-black/60 text-sm font-semibold animate-bounce mt-4">
+                                <p className="text-black/60 text-xs sm:text-sm font-semibold animate-bounce mt-2 sm:mt-4">
                                     Touch to Connect
                                 </p>
                             </motion.div>
                         ) : (
-                            <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row gap-6 justify-center items-center z-10">
+                            <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row gap-3 sm:gap-6 justify-center items-center z-10 px-4 sm:px-0">
                                 {/* LinkedIn - Neon Blue Glossy */}
                                 <motion.a
                                     href={profileData.linkedin}
@@ -59,16 +69,16 @@ const Contact = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: -50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.1 }}
-                                    className="w-full md:w-1/3 h-[300px] bg-gradient-to-br from-cyan-400 via-blue-600 to-blue-900 rounded-2xl shadow-[0_0_30px_rgba(59,130,246,0.6)] border-2 border-cyan-300 flex flex-col justify-center items-center gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[220px] sm:h-[300px] bg-gradient-to-br from-cyan-400 via-blue-600 to-blue-900 rounded-2xl shadow-[0_0_30px_rgba(59,130,246,0.6)] border-2 border-cyan-300 flex flex-col justify-center items-center gap-3 sm:gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
                                 >
                                     {/* Gloss Effect */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
 
-                                    <div className="p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
-                                        <Linkedin size={48} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                    <div className="p-3 sm:p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
+                                        <Linkedin size={32} className="sm:w-12 sm:h-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white drop-shadow-md z-10">LinkedIn</h3>
-                                    <p className="text-cyan-100 text-sm font-medium z-10">Connect professionally</p>
+                                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md z-10">LinkedIn</h3>
+                                    <p className="text-cyan-100 text-xs sm:text-sm font-medium z-10">Connect professionally</p>
                                 </motion.a>
 
                                 {/* Mail - Neon Green Glossy */}
@@ -78,16 +88,16 @@ const Contact = () => {
                                     animate={{ y: 0, opacity: 1 }}
                                     exit={{ y: 50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.2 }}
-                                    className="w-full md:w-1/3 h-[300px] bg-gradient-to-br from-lime-400 via-green-600 to-green-900 rounded-2xl shadow-[0_0_30px_rgba(34,197,94,0.6)] border-2 border-lime-300 flex flex-col justify-center items-center gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[220px] sm:h-[300px] bg-gradient-to-br from-lime-400 via-green-600 to-green-900 rounded-2xl shadow-[0_0_30px_rgba(34,197,94,0.6)] border-2 border-lime-300 flex flex-col justify-center items-center gap-3 sm:gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
                                 >
                                     {/* Gloss Effect */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
 
-                                    <div className="p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
-                                        <Mail size={48} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                    <div className="p-3 sm:p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
+                                        <Mail size={32} className="sm:w-12 sm:h-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white drop-shadow-md z-10">Email</h3>
-                                    <p className="text-lime-100 text-sm font-medium z-10">{profileData.email}</p>
+                                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md z-10">Email</h3>
+                                    <p className="text-lime-100 text-xs sm:text-sm font-medium z-10 break-all">{profileData.email}</p>
                                 </motion.a>
 
                                 {/* GitHub - Neon Purple Glossy */}
@@ -99,22 +109,22 @@ const Contact = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: 50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.3 }}
-                                    className="w-full md:w-1/3 h-[300px] bg-gradient-to-br from-fuchsia-400 via-purple-600 to-purple-900 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.6)] border-2 border-fuchsia-300 flex flex-col justify-center items-center gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[220px] sm:h-[300px] bg-gradient-to-br from-fuchsia-400 via-purple-600 to-purple-900 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.6)] border-2 border-fuchsia-300 flex flex-col justify-center items-center gap-3 sm:gap-4 cursor-pointer hover:scale-105 transition-transform relative overflow-hidden group"
                                 >
                                     {/* Gloss Effect */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
 
-                                    <div className="p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
-                                        <Github size={48} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                    <div className="p-3 sm:p-4 bg-black/20 rounded-full backdrop-blur-md border border-white/30 shadow-inner z-10">
+                                        <Github size={32} className="sm:w-12 sm:h-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white drop-shadow-md z-10">GitHub</h3>
-                                    <p className="text-fuchsia-100 text-sm font-medium z-10">Check my code</p>
+                                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md z-10">GitHub</h3>
+                                    <p className="text-fuchsia-100 text-xs sm:text-sm font-medium z-10">Check my code</p>
                                 </motion.a>
                             </div>
                         )}
                     </AnimatePresence>
                 </div>
-                <p className="text-secondary text-center text-[15px] mt-2">{profileData.location} | {profileData.phone}</p>
+                <p className="text-secondary text-center text-xs sm:text-[15px] mt-2 px-4">{profileData.location} | {profileData.phone}</p>
             </motion.div>
         </div>
     );
