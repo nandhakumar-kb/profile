@@ -69,7 +69,7 @@ const Contact = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: -50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.1 }}
-                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-blue-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-blue-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group pointer-events-auto z-20"
                                 >
                                     {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -88,7 +88,7 @@ const Contact = () => {
                                     animate={{ y: 0, opacity: 1 }}
                                     exit={{ y: 50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.2 }}
-                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-emerald-900 via-teal-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-emerald-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-emerald-900 via-teal-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-emerald-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group pointer-events-auto z-20"
                                 >
                                     {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -109,7 +109,7 @@ const Contact = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: 50, opacity: 0 }}
                                     transition={{ duration: 0.3, delay: 0.3 }}
-                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-purple-900 via-violet-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-purple-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group"
+                                    className="w-full md:w-1/3 h-[180px] sm:h-[220px] md:h-[300px] bg-gradient-to-br from-purple-900 via-violet-800 to-slate-900 rounded-xl sm:rounded-2xl shadow-lg border-2 border-purple-500/30 flex flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 cursor-pointer active:scale-95 hover:scale-105 transition-transform relative overflow-hidden group pointer-events-auto z-20"
                                 >
                                     {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

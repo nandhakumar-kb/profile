@@ -32,6 +32,7 @@ const profileData = {
     resumeDownloadName: "Nandha_Kumar_K_B_Resume.pdf",
     linkedin: "https://www.linkedin.com/in/nandha-kumar-k-b/",
     github: "https://github.com/nandhakumarkb2005",
+    portfolio: "https://nandhakumarkb.vercel.app/",
 };
 
 const services = [
@@ -139,7 +140,7 @@ const projects = [
             },
         ],
         image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2070&q=80",
-        source_code_link: profileData.github,
+        source_code_link: "https://cognitive-modal.vercel.app/",
     },
     {
         name: "AI-Native Engineering Portfolio",
@@ -160,7 +161,7 @@ const projects = [
             },
         ],
         image: "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=2029&q=80",
-        source_code_link: profileData.github,
+        source_code_link: "https://nandhakumarkb.vercel.app/",
     },
     {
         name: "GreenCart - Brand Storefront",
@@ -181,7 +182,7 @@ const projects = [
             },
         ],
         image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        source_code_link: profileData.github,
+        source_code_link: "https://greencart-nk.vercel.app/",
     },
     {
         name: "CarRental - Dynamic Service Pipeline",
@@ -202,7 +203,7 @@ const projects = [
             },
         ],
         image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2070&q=80",
-        source_code_link: profileData.github,
+        source_code_link: "https://carrental-nk.vercel.app/",
     },
 ];
 

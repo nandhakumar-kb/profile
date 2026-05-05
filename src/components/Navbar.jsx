@@ -47,84 +47,119 @@ const Navbar = () => {
     };
 
     return (
-        <div className="fixed top-5 left-0 right-0 z-50 flex justify-center items-center pointer-events-none px-4 sm:px-0">
-            {/* Desktop Navbar */}
-            <motion.nav
+        <>
+            {/* Mobile Top Header */}
+            <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-                className={`pointer-events-auto hidden md:flex items-center gap-4 px-6 py-4 rounded-full bg-black/30 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20`}
+                className="md:hidden fixed top-0 left-0 right-0 z-40 bg-black/50 backdrop-blur-md border-b border-white/10 px-4 py-4"
             >
-                <Link
-                    to="/"
-                    className="p-4 rounded-full hover:bg-white/10 transition-colors"
-                    onClick={() => {
-                        setActive("");
-                        window.scrollTo(0, 0);
-                    }}
+                <div className="flex items-center justify-between">
+                    <Link
+                        to="/"
+                        className="flex flex-col gap-1"
+                        onClick={() => {
+                            setActive("");
+                            window.scrollTo(0, 0);
+                        }}
+                    >
+                        <h1 className="text-lg font-bold text-white">Nandha Kumar</h1>
+                        <p className="text-xs text-secondary">UI/UX Designer & Engineer</p>
+                    </Link>
+                    <a
+                        href={profileData.resumeFile}
+                        download={profileData.resumeDownloadName}
+                        className="px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all flex items-center gap-1 text-white text-xs font-semibold"
+                    >
+                        <Download size={14} />
+                        CV
+                    </a>
+                </div>
+            </motion.div>
+
+            {/* Spacer for mobile header */}
+            <div className="md:hidden h-16" />
+
+            {/* Desktop Navbar */}
+            <div className="fixed top-5 left-0 right-0 z-50 flex justify-center items-center pointer-events-none px-4 sm:px-0">
+                <motion.nav
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+                    className={`pointer-events-auto hidden md:flex items-center gap-4 px-6 py-4 rounded-full bg-black/30 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20`}
                 >
-                    <Home size={28} className="text-white" />
-                </Link>
+                    <Link
+                        to="/"
+                        className="p-4 rounded-full hover:bg-white/10 transition-colors"
+                        onClick={() => {
+                            setActive("");
+                            window.scrollTo(0, 0);
+                        }}
+                    >
+                        <Home size={28} className="text-white" />
+                    </Link>
 
-                <div className="w-[1px] h-10 bg-white/10 mx-2" />
+                    <div className="w-[1px] h-10 bg-white/10 mx-2" />
 
-                <ul className="flex items-center gap-2">
-                    {navLinks.map((nav) => {
-                        const Icon = nav.icon;
-                        const isActive = active === nav.id;
+                    <ul className="flex items-center gap-2">
+                        {navLinks.map((nav) => {
+                            const Icon = nav.icon;
+                            const isActive = active === nav.id;
 
-                        return (
-                            <li key={nav.id} className="relative">
-                                <a
-                                    href={`#${nav.id}`}
-                                    onClick={() => handleNavClick(nav.id)}
-                                    className={`relative flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 group ${isActive ? "bg-white/10" : "hover:bg-white/5"}`}
-                                >
-                                    {isActive && (
-                                        <motion.div
-                                            layoutId="active-pill"
-                                            className={`absolute inset-0 rounded-full opacity-20 ${nav.bg}`}
-                                            transition={{ type: "spring", duration: 0.6 }}
-                                        />
-                                    )}
-
-                                    <motion.div
-                                        whileHover={{ scale: 1.1 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="relative z-10 flex items-center gap-3"
+                            return (
+                                <li key={nav.id} className="relative">
+                                    <a
+                                        href={`#${nav.id}`}
+                                        onClick={() => handleNavClick(nav.id)}
+                                        className={`relative flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 group ${isActive ? "bg-white/10" : "hover:bg-white/5"}`}
                                     >
-                                        <Icon
-                                            size={24}
-                                            className={`${isActive ? nav.color : "text-secondary group-hover:text-white"} transition-colors`}
-                                        />
-                                        <span className={`text-lg font-medium ${isActive ? "text-white" : "text-secondary group-hover:text-white"} transition-colors`}>
-                                            {nav.title}
-                                        </span>
-                                    </motion.div>
-                                </a>
-                            </li>
-                        );
-                    })}
+                                        {isActive && (
+                                            <motion.div
+                                                layoutId="active-pill"
+                                                className={`absolute inset-0 rounded-full opacity-20 ${nav.bg}`}
+                                                transition={{ type: "spring", duration: 0.6 }}
+                                            />
+                                        )}
 
-                    {/* Resume Button */}
-                    <li className="relative ml-4">
-                        <a
-                            href={profileData.resumeFile}
-                            download={profileData.resumeDownloadName}
-                            className="relative flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/30 group"
-                        >
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="relative z-10 flex items-center gap-2"
+                                        <motion.div
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="relative z-10 flex items-center gap-3"
+                                        >
+                                            <Icon
+                                                size={24}
+                                                className={`${isActive ? nav.color : "text-secondary group-hover:text-white"} transition-colors`}
+                                            />
+                                            <span className={`text-lg font-medium ${isActive ? "text-white" : "text-secondary group-hover:text-white"} transition-colors`}>
+                                                {nav.title}
+                                            </span>
+                                        </motion.div>
+                                    </a>
+                                </li>
+                            );
+                        })}
+
+                        {/* Resume Button */}
+                        <li className="relative ml-4">
+                            <a
+                                href={profileData.resumeFile}
+                                download={profileData.resumeDownloadName}
+                                className="relative flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/30 group"
                             >
-                                <Download size={20} className="text-white" />
-                                <span className="text-lg font-bold text-white">Resume</span>
-                            </motion.div>
-                        </a>
-                    </li>
-                </ul>
-            </motion.nav>
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="relative z-10 flex items-center gap-2"
+                                >
+                                    <Download size={20} className="text-white" />
+                                    <span className="text-lg font-bold text-white">Resume</span>
+                                </motion.div>
+                            </a>
+                        </li>
+                    </ul>
+                </motion.nav>
+            </div>
 
             {/* Mobile Bottom Navigation */}
             <motion.nav
@@ -189,8 +224,5 @@ const Navbar = () => {
                     <Download size={18} className="text-white" />
                 </a>
             </motion.nav>
-        </div>
+        </>
     );
-};
-
-export default Navbar;
