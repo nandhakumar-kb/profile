@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const CertificationCard = ({ cert, index }) => (
     <motion.div
         variants={fadeIn("up", "spring", index * 0.2, 0.75)}
-        className="relative w-full md:w-[350px] lg:w-[380px] h-[250px] group cursor-pointer perspective-1000"
+        className="relative w-[85vw] max-w-[320px] sm:max-w-none sm:w-[350px] md:w-[350px] lg:w-[380px] h-[250px] group cursor-pointer perspective-1000"
     >
         <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-glass transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transform-style-3d group-hover:rotate-y-180">
             
@@ -46,9 +46,11 @@ const Certifications = () => {
                 </h2>
             </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-8 sm:gap-10">
+            <div className="flex flex-nowrap overflow-x-auto pb-8 gap-8 sm:gap-10 px-4 snap-x snap-mandatory scrollbar-hide">
                 {certifications.map((cert, index) => (
-                    <CertificationCard key={`cert-${index}`} cert={cert} index={index} />
+                    <div key={`cert-${index}`} className="snap-center shrink-0">
+                        <CertificationCard cert={cert} index={index} />
+                    </div>
                 ))}
             </div>
         </div>

@@ -63,8 +63,8 @@ const skills = [
         title: "Languages",
         skills: [
             { name: "Java", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png" },
-            { name: "Python", color: "#29b6f6", icon: "https://cdn.simpleicons.org/python" },
-            { name: "JavaScript", color: "#ef5350", icon: "https://cdn.simpleicons.org/javascript" },
+            { name: "Python", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/python.png" },
+            { name: "JavaScript", color: "#ef5350", icon: "https://img.icons8.com/color/48/000000/javascript.png" },
             { name: "SQL", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/database.png" },
         ],
     },
@@ -72,9 +72,9 @@ const skills = [
         title: "Web Development",
         skills: [
             { name: "UI/UX", color: "#7e57c2", icon: "https://img.icons8.com/color/48/000000/design.png" },
-            { name: "HTML", color: "#ef5350", icon: "https://cdn.simpleicons.org/html5" },
+            { name: "HTML", color: "#ef5350", icon: "https://img.icons8.com/color/48/000000/html-5.png" },
             { name: "CSS", color: "#ef5350", icon: "https://img.icons8.com/color/48/000000/css3.png" },
-            { name: "React.js", color: "#ef5350", icon: "https://cdn.simpleicons.org/react" },
+            { name: "React.js", color: "#ef5350", icon: "https://img.icons8.com/color/48/000000/react-native.png" },
         ],
     },
     {
@@ -89,8 +89,8 @@ const skills = [
         skills: [
             { name: "VS Code", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" },
             { name: "GitHub", color: "#333", icon: "https://img.icons8.com/ios-filled/50/000000/github.png" },
-            { name: "Figma", color: "#4db6ac", icon: "https://cdn.simpleicons.org/figma" },
-            { name: "Canva", color: "#4db6ac", icon: "https://cdn.simpleicons.org/canva" },
+            { name: "Figma", color: "#4db6ac", icon: "https://img.icons8.com/color/48/000000/figma.png" },
+            { name: "Canva", color: "#4db6ac", icon: "https://img.icons8.com/color/48/000000/canva.png" },
             { name: "Antigravity", color: "#ff9800", icon: "https://img.icons8.com/color/48/000000/artificial-intelligence.png" },
         ],
     },
