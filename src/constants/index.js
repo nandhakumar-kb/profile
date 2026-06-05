@@ -190,7 +190,7 @@ const projects = [
 
 const certifications = [
     {
-        name: "Full-Stack & System Design",
+        name: "MERN Stack Development",
         issuer: "GreatStack & ExcelR",
         date: "Certified",
         description: "Specialized in end-to-end application architecture through 'Full Stack Development' and 'React.js'.",
