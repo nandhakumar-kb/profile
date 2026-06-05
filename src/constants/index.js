@@ -1,7 +1,9 @@
 import greencartImg from "../assets/projects/greencart.png";
 import carrentalImg from "../assets/projects/carrental.png";
 import smartcampusImg from "../assets/projects/smartcampus.png";
-import javaCertImg from "../assets/certifications/java.png";
+import fullstackCertImg from "../assets/certifications/fullstack.png";
+import javapythonCertImg from "../assets/certifications/javapython.png";
+import uiuxCertImg from "../assets/certifications/uiux.png";
 
 export const navLinks = [
     {
@@ -192,21 +194,21 @@ const certifications = [
         issuer: "GreatStack & ExcelR",
         date: "Certified",
         description: "Specialized in end-to-end application architecture through 'Full Stack Development' and 'React.js'.",
-        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+        image: fullstackCertImg,
     },
     {
         name: "Enterprise Logic & Backend",
         issuer: "HackerRank & Infosys SpringBoard",
         date: "Certified",
         description: "Validated proficiency in backend engineering with 'Java' and 'Python'.",
-        image: javaCertImg,
+        image: javapythonCertImg,
     },
     {
         name: "Design & User Experience",
         issuer: "Great Learning & LearnTube",
         date: "Certified",
         description: "Mastered 'UI/UX Design' & 'Figma', focusing on the intersection of brand aesthetics and technical usability.",
-        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+        image: uiuxCertImg,
     },
 ];
 
