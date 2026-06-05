@@ -35,9 +35,9 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
+        { id: "skills", title: "Skills", icon: Code, color: "text-yellow-500", bg: "bg-yellow-500" },
         { id: "about", title: "About", icon: User, color: "text-blue-500", bg: "bg-blue-500" },
         { id: "education", title: "Education", icon: FileText, color: "text-green-500", bg: "bg-green-500" },
-        { id: "skills", title: "Skills", icon: Code, color: "text-yellow-500", bg: "bg-yellow-500" },
         { id: "projects", title: "Projects", icon: Code, color: "text-pink-500", bg: "bg-pink-500" },
         { id: "contact", title: "Contact", icon: Mail, color: "text-red-500", bg: "bg-red-500" },
     ];

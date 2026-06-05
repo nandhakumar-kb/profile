@@ -40,33 +40,33 @@ const About = () => {
                         </div>
 
                         {/* Letter Content */}
-                        <div className="flex-1 font-['Dancing_Script'] text-gray-800">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-[#915eff]">Dear Visitor,</h3>
+                        <div className="flex-1 text-gray-800">
+                            <h3 className="font-['Dancing_Script'] text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-[#915eff]">Dear Visitor,</h3>
                             
-                            <p className="text-base sm:text-lg md:text-2xl leading-relaxed mb-4 sm:mb-6">
-                                I am a versatile <span className="font-bold text-[#915eff]">Web Developer and CSE student</span> specializing in creating intuitive, user-centric applications.
+                            <p className="font-primary text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-6 tracking-wide text-slate-700">
+                                I am a versatile <span className="font-semibold text-[#915eff]">Web Developer and CSE student</span> specializing in creating intuitive, user-centric applications.
                             </p>
                             
-                            <p className="text-base sm:text-lg md:text-2xl leading-relaxed mb-6 sm:mb-8">
-                                I am highly skilled in modern web technologies including <span className="font-bold text-[#915eff]">React.js, JavaScript, HTML, and CSS</span>, paired with a strong eye for UI/UX design using Figma. I combine engaging front-end development with robust programming logic in <span className="font-bold text-[#915eff]">Java and Python</span>.
+                            <p className="font-primary text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 tracking-wide text-slate-700">
+                                I am highly skilled in modern web technologies including <span className="font-semibold text-[#915eff]">React.js, JavaScript, HTML, and CSS</span>, paired with a strong eye for UI/UX design using Figma. I combine engaging front-end development with robust programming logic in <span className="font-semibold text-[#915eff]">Java and Python</span>.
                             </p>
 
-                            <p className="text-sm sm:text-base md:text-xl leading-relaxed mb-4 font-semibold text-[#915eff]">
+                            <p className="font-stylish text-sm sm:text-base md:text-lg leading-relaxed mb-4 font-semibold text-[#6646cc] tracking-wide uppercase">
                                 {profileData.headline}
                             </p>
 
-                            <p className="text-xs sm:text-sm md:text-lg leading-relaxed mb-2 text-gray-700">
+                            <p className="font-mono text-xs sm:text-sm md:text-base leading-relaxed mb-2 text-slate-500">
                                 {profileData.location} | {profileData.phone}
                             </p>
 
-                            <p className="text-xs sm:text-sm md:text-lg leading-relaxed text-gray-700">
+                            <p className="font-mono text-xs sm:text-sm md:text-base leading-relaxed text-slate-500">
                                 {profileData.email}
                             </p>
 
-                            <div className="flex justify-end mt-6 sm:mt-8">
-                                <div className="text-right">
-                                    <p className="text-lg sm:text-2xl mb-2">Sincerely,</p>
-                                    <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#915eff] transform -rotate-2">Nandha Kumar</p>
+                            <div className="flex justify-end mt-8 sm:mt-10">
+                                <div className="text-right font-['Dancing_Script']">
+                                    <p className="text-2xl sm:text-3xl mb-2 text-gray-600">Sincerely,</p>
+                                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#915eff] transform -rotate-2">Nandha Kumar</p>
                                 </div>
                             </div>
                         </div>
