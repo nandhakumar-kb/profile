@@ -56,10 +56,10 @@ const CertificateCard = ({ index, name, issuer, date, description }) => (
 const Certifications = () => {
     return (
         <div className="mt-8 sm:mt-12 bg-black-100 rounded-[20px]">
-            <div className={`${styles.padding} bg-tertiary rounded-2xl min-h-[260px] sm:min-h-[300px]`}>
+            <div className={`${styles.padding} bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl min-h-[260px] sm:min-h-[300px]`}>
                 <motion.div variants={textVariant()}>
                     <p className={styles.sectionSubText}>My Credentials</p>
-                    <h2 className={`${styles.sectionHeadText} text-accent-about`}>Certifications.</h2>
+                    <h2 className={`${styles.sectionHeadText} bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent`}>Certifications.</h2>
                 </motion.div>
             </div>
             <div className={`${styles.paddingX} -mt-12 sm:-mt-20 pb-10 sm:pb-14 flex flex-wrap gap-5 sm:gap-7 justify-center`}>

@@ -77,7 +77,7 @@ const Skills = () => {
         <div className="flex flex-col w-full">
             <motion.div variants={textVariant()} className="mb-8 sm:mb-14 text-center">
                 <p className={styles.sectionSubText}>My Technical Proficiency</p>
-                <h2 className={`${styles.sectionHeadText} text-accent-skills`}>Skills.</h2>
+                <h2 className={`${styles.sectionHeadText} bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent`}>Skills.</h2>
             </motion.div>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>

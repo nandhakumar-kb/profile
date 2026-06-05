@@ -56,42 +56,38 @@ const services = [
 
 const skills = [
     {
-        title: "Design Tools",
-        skills: [
-            { name: "Figma (Advanced Components & Auto-Layout)", color: "#4db6ac", icon: "https://cdn.simpleicons.org/figma" },
-            { name: "Stitch (AI-UI)", color: "#4db6ac", icon: "https://img.icons8.com/color/48/000000/artificial-intelligence.png" },
-            { name: "Adobe Firefly", color: "#4db6ac", icon: "https://img.icons8.com/color/48/000000/adobe-creative-cloud.png" },
-            { name: "Canva", color: "#4db6ac", icon: "https://cdn.simpleicons.org/canva" },
-            { name: "Lovable", color: "#4db6ac", icon: "https://img.icons8.com/color/48/000000/idea.png" },
-        ],
-    },
-    {
-        title: "UI/UX Competencies",
-        skills: [
-            { name: "Interaction Design", color: "#7e57c2", icon: "https://img.icons8.com/color/48/000000/touchscreen-smartphone.png" },
-            { name: "Visual Storytelling", color: "#7e57c2", icon: "https://img.icons8.com/color/48/000000/paint-palette.png" },
-            { name: "Motion & Transitions", color: "#7e57c2", icon: "https://img.icons8.com/color/48/000000/video-editing.png" },
-            { name: "Design Systems", color: "#7e57c2", icon: "https://img.icons8.com/color/48/000000/web-design.png" },
-        ],
-    },
-    {
-        title: "Front-End Engineering",
-        skills: [
-            { name: "React.js", color: "#ef5350", icon: "https://cdn.simpleicons.org/react" },
-            { name: "Tailwind CSS", color: "#ef5350", icon: "https://cdn.simpleicons.org/tailwindcss" },
-            { name: "JavaScript (ES6+)", color: "#ef5350", icon: "https://cdn.simpleicons.org/javascript" },
-            { name: "HTML5", color: "#ef5350", icon: "https://cdn.simpleicons.org/html5" },
-            { name: "CSS3", color: "#ef5350", icon: "https://img.icons8.com/color/48/000000/css3.png" },
-        ],
-    },
-    {
-        title: "Technical Logic",
+        title: "Languages",
         skills: [
             { name: "Java", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png" },
             { name: "Python", color: "#29b6f6", icon: "https://cdn.simpleicons.org/python" },
+            { name: "JavaScript", color: "#ef5350", icon: "https://cdn.simpleicons.org/javascript" },
             { name: "SQL", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/database.png" },
-            { name: "Modular Architecture", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/module.png" },
-            { name: "System Design", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/system-task.png" },
+        ],
+    },
+    {
+        title: "Web Development",
+        skills: [
+            { name: "UI/UX", color: "#7e57c2", icon: "https://img.icons8.com/color/48/000000/design.png" },
+            { name: "HTML", color: "#ef5350", icon: "https://cdn.simpleicons.org/html5" },
+            { name: "CSS", color: "#ef5350", icon: "https://img.icons8.com/color/48/000000/css3.png" },
+            { name: "React.js", color: "#ef5350", icon: "https://cdn.simpleicons.org/react" },
+        ],
+    },
+    {
+        title: "Data Analytics",
+        skills: [
+            { name: "Microsoft Power BI", color: "#fbc02d", icon: "https://img.icons8.com/color/48/000000/power-bi.png" },
+            { name: "Microsoft Excel", color: "#4caf50", icon: "https://img.icons8.com/color/48/000000/ms-excel.png" },
+        ],
+    },
+    {
+        title: "Developer Tools",
+        skills: [
+            { name: "VS Code", color: "#29b6f6", icon: "https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" },
+            { name: "GitHub", color: "#333", icon: "https://img.icons8.com/ios-filled/50/000000/github.png" },
+            { name: "Figma", color: "#4db6ac", icon: "https://cdn.simpleicons.org/figma" },
+            { name: "Canva", color: "#4db6ac", icon: "https://cdn.simpleicons.org/canva" },
+            { name: "Antigravity", color: "#ff9800", icon: "https://img.icons8.com/color/48/000000/artificial-intelligence.png" },
         ],
     },
 ];
@@ -122,62 +118,20 @@ const education = [
 
 const projects = [
     {
-        name: "Cognitive Modal - Visual Storytelling Concept",
+        name: "GreenCart – Full-Stack Grocery E-Commerce Platform",
         description:
-            "Engineered a high-impact static experience exploring bold visual hierarchy and intentional typography. Developed a modal-driven interaction flow focused on lightweight performance, intuitive scanability, and responsive rhythm across device scales.",
+            "Built a comprehensive MERN stack grocery delivery platform featuring a dynamic product catalog, real-time shopping cart state management, and secure checkout. Developed a dedicated seller dashboard enabling vendors to list products, upload and optimize media, toggle inventory status, and track user orders.",
         tags: [
             {
-                name: "UI/UX",
+                name: "MERN Stack",
                 color: "blue-text-gradient",
+            },
+            {
+                name: "E-Commerce",
+                color: "green-text-gradient",
             },
             {
                 name: "React",
-                color: "green-text-gradient",
-            },
-            {
-                name: "Visual Storytelling",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2070&q=80",
-        source_code_link: "https://cognitive-modal.vercel.app/",
-    },
-    {
-        name: "AI-Native Engineering Portfolio",
-        description:
-            "Architected a high-performance responsive portfolio using React.js and Tailwind CSS. Showcased modular system logic with modern UI aesthetics and implemented custom filtering with motion-enhanced navigation for technical precision.",
-        tags: [
-            {
-                name: "React.js",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "Tailwind CSS",
-                color: "green-text-gradient",
-            },
-            {
-                name: "Motion UX",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=2029&q=80",
-        source_code_link: "https://nandhakumarkb.vercel.app/",
-    },
-    {
-        name: "GreenCart - Brand Storefront",
-        description:
-            "Engineered a pixel-perfect commerce experience from scratch with fluid state management. Created a modular UI architecture that maintains full consistency and near-zero navigation latency.",
-        tags: [
-            {
-                name: "Product Design",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "Frontend",
-                color: "green-text-gradient",
-            },
-            {
-                name: "UI Systems",
                 color: "pink-text-gradient",
             },
         ],
@@ -185,46 +139,67 @@ const projects = [
         source_code_link: "https://greencart-nk.vercel.app/",
     },
     {
-        name: "CarRental - Dynamic Service Pipeline",
+        name: "Car Rental Booking System",
         description:
-            "Built a robust search-to-reservation pipeline that handles dynamic resource allocation. Implemented advanced filtering logic to process complex pricing and availability parameters in real time.",
+            "Engineered a dual-role car rental application allowing users to filter available vehicles by location and date, while enabling car owners to list vehicles and manage booking statuses. Optimized platform load speed and media delivery and enhanced user experience (UX) by implementing smooth page transitions and interactive interface animations.",
         tags: [
             {
                 name: "System Design",
                 color: "blue-text-gradient",
             },
             {
-                name: "Filtering Engine",
+                name: "UI/UX",
                 color: "green-text-gradient",
             },
             {
-                name: "Real-time Logic",
+                name: "React",
                 color: "pink-text-gradient",
             },
         ],
         image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2070&q=80",
         source_code_link: "https://carrental-nk.vercel.app/",
     },
+    {
+        name: "Smart Campus KPR – Institution Management Solution",
+        description:
+            "Architected a specialized digital campus platform aimed at centralizing resources and streamlining academic operations for students and faculty. Leveraged modern Git workflows for version control and successfully deployed the scalable web application globally via Vercel.",
+        tags: [
+            {
+                name: "Web App",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Architecture",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Deployment",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2070&q=80",
+        source_code_link: "https://smartcampus-kpr.vercel.app/",
+    },
 ];
 
 const certifications = [
     {
-        name: "UI/UX Design",
-        issuer: "Great Learning",
+        name: "Full-Stack & System Design",
+        issuer: "GreatStack & ExcelR",
         date: "Certified",
-        description: "Mastered the intersection of brand aesthetics and technical usability.",
+        description: "Specialized in end-to-end application architecture through 'Full Stack Development' and 'React.js'.",
     },
     {
-        name: "Full-Stack Development",
-        issuer: "ExcelR",
+        name: "Enterprise Logic & Backend",
+        issuer: "HackerRank & Infosys SpringBoard",
         date: "Certified",
-        description: "Specialized in end-to-end application architecture.",
+        description: "Validated proficiency in backend engineering with 'Java' and 'Python'.",
     },
     {
-        name: "Backend Engineering (Java & Python)",
-        issuer: "HackerRank and Infosys",
+        name: "Design & User Experience",
+        issuer: "Great Learning & LearnTube",
         date: "Certified",
-        description: "Validated proficiency in Java and Python for backend engineering.",
+        description: "Mastered 'UI/UX Design' & 'Figma', focusing on the intersection of brand aesthetics and technical usability.",
     },
 ];
 

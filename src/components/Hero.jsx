@@ -23,9 +23,9 @@ const Hero = () => {
                 <div className="flex-1 flex justify-center lg:justify-end relative">
                     <motion.img
                         initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        whileHover={{ scale: 1.05, rotate: 2, filter: "brightness(1.1)" }}
-                        transition={{ duration: 0.5 }}
+                        animate={{ opacity: 1, scale: 1, y: [0, -15, 0] }}
+                        transition={{ duration: 0.5, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+                        whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
                         src={avatar}
                         alt={profileData.fullName}
                         className="relative w-[280px] h-[280px] xs:w-[320px] xs:h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[580px] lg:h-[580px] object-contain drop-shadow-2xl z-10"

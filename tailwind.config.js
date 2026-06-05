@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
+        primary: "#0A0A0B", // Darker, richer background
         secondary: "#aaa6c3",
-        tertiary: "#151030",
+        tertiary: "#111116", // Slightly lighter for cards
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
@@ -22,11 +22,12 @@ export default {
         },
       },
       fontFamily: {
-        primary: ["Poppins", "sans-serif"],
-        stylish: ["Playfair Display", "serif"],
+        primary: ["Inter", "sans-serif"],
+        stylish: ["Outfit", "sans-serif"],
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
+        glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
       },
       screens: {
         xs: "450px",
@@ -36,6 +37,7 @@ export default {
       },
       animation: {
         'gradient-x': 'gradient-x 3s ease infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         'gradient-x': {
@@ -47,6 +49,10 @@ export default {
             'background-size': '200% 200%',
             'background-position': 'right center',
           },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
       },
     },
