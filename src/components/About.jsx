@@ -44,13 +44,11 @@ const About = () => {
                             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-[#915eff]">Dear Visitor,</h3>
                             
                             <p className="text-base sm:text-lg md:text-2xl leading-relaxed mb-4 sm:mb-6">
-                                I am a detail-oriented <span className="font-bold text-[#915eff]">Computer Science Engineering student (2027 Batch)</span> specializing in the intersection of
-                                complex system architecture and intuitive UI/UX.
+                                I am a versatile <span className="font-bold text-[#915eff]">Web Developer and CSE student</span> specializing in creating intuitive, user-centric applications.
                             </p>
                             
                             <p className="text-base sm:text-lg md:text-2xl leading-relaxed mb-6 sm:mb-8">
-                                I work deeply with <span className="font-bold text-[#915eff]">Figma and React.js</span>, building pixel-perfect digital products with a strong focus on clarity,
-                                motion, and usability. I am passionate about AI-Native design, where machine learning and modular logic support better decisions and cognitive hospitality.
+                                I am highly skilled in modern web technologies including <span className="font-bold text-[#915eff]">React.js, JavaScript, HTML, and CSS</span>, paired with a strong eye for UI/UX design using Figma. I combine engaging front-end development with robust programming logic in <span className="font-bold text-[#915eff]">Java and Python</span>.
                             </p>
 
                             <p className="text-sm sm:text-base md:text-xl leading-relaxed mb-4 font-semibold text-[#915eff]">

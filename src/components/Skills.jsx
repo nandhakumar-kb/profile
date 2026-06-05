@@ -6,14 +6,7 @@ import SectionWrapper from "../hoc/SectionWrapper";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Cpu } from "lucide-react";
 
-const cardColors = [
-    "from-emerald-900/50 to-teal-900/50 border-emerald-500/30",
-    "from-violet-900/50 to-purple-900/50 border-violet-500/30",
-    "from-rose-900/50 to-red-900/50 border-rose-500/30",
-    "from-sky-900/50 to-blue-900/50 border-sky-500/30",
-    "from-amber-900/50 to-orange-900/50 border-amber-500/30",
-    "from-fuchsia-900/50 to-pink-900/50 border-fuchsia-500/30",
-];
+
 
 const SkillIcon = ({ icon, name }) => {
     const [imgError, setImgError] = useState(false);
@@ -45,9 +38,9 @@ const SkillCard = ({ title, skills, index }) => (
                 scale: 1,
                 speed: 450,
             }}
-            className={`bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-[20px] py-4 sm:py-5 px-4 sm:px-6 min-h-[280px] flex flex-col items-center justify-start border backdrop-blur-sm hover:border-white/40 transition-all duration-300 group/card`}
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[20px] py-4 sm:py-5 px-4 sm:px-6 min-h-[280px] flex flex-col items-center justify-start hover:border-white/20 hover:bg-white/10 shadow-glass transition-all duration-300 group/card"
         >
-            <h3 className="text-white text-base sm:text-[20px] font-bold text-center mb-6 sm:mb-8 border-b border-white/10 pb-2 w-full tracking-wider">
+            <h3 className="text-white text-base sm:text-[20px] font-bold text-center mb-6 sm:mb-8 border-b border-white/10 pb-2 w-full tracking-wider font-stylish">
                 {title}
             </h3>
 

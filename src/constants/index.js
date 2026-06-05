@@ -1,3 +1,6 @@
+import greencartImg from "../assets/projects/greencart.png";
+import carrentalImg from "../assets/projects/carrental.png";
+import smartcampusImg from "../assets/projects/smartcampus.png";
 
 export const navLinks = [
     {
@@ -135,7 +138,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        image: greencartImg,
         source_code_link: "https://greencart-nk.vercel.app/",
     },
     {
@@ -156,7 +159,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2070&q=80",
+        image: carrentalImg,
         source_code_link: "https://carrental-nk.vercel.app/",
     },
     {
@@ -177,7 +180,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2070&q=80",
+        image: smartcampusImg,
         source_code_link: "https://smartcampus-kpr.vercel.app/",
     },
 ];
