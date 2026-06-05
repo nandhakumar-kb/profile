@@ -8,9 +8,9 @@ import { textVariant, fadeIn } from "../utils/motion";
 const EducationCard = ({ edu, index }) => {
     return (
         <motion.div
-            variants={fadeIn("right", "spring", index * 0.3, 0.75)}
+            variants={fadeIn("up", "spring", index * 0.3, 0.75)}
             whileHover={{ y: -5 }}
-            className="bg-white/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-2xl w-[85vw] max-w-[320px] sm:max-w-none sm:w-[400px] shadow-glass flex flex-col justify-between transition-all duration-300 group shrink-0"
+            className="bg-white/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-2xl shadow-glass flex flex-col justify-between transition-all duration-300 group h-full w-full"
         >
             <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-4">
@@ -48,11 +48,9 @@ const Education = () => {
                 </h2>
             </motion.div>
 
-            <div className="flex flex-nowrap overflow-x-auto pb-8 gap-6 sm:gap-8 px-4 snap-x snap-mandatory scrollbar-hide">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 w-full max-w-5xl mx-auto items-stretch">
                 {education.map((edu, index) => (
-                    <div key={`education-${index}`} className="snap-center shrink-0">
-                        <EducationCard edu={edu} index={index} />
-                    </div>
+                    <EducationCard key={`education-${index}`} edu={edu} index={index} />
                 ))}
             </div>
         </div>
